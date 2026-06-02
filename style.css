@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #07121f;
+  --panel: rgba(255, 255, 255, 0.085);
+  --panel-strong: rgba(255, 255, 255, 0.14);
+  --line: rgba(255, 255, 255, 0.18);
+  --text: #edf8ff;
+  --muted: #a8bed1;
+  --cyan: #2ee9d3;
+  --blue: #59a6ff;
+  --green: #69f0ae;
+  --amber: #ffd166;
+  --red: #ff5d73;
+  --violet: #b99cff;
+}
+
+html, body, [class*="css"] {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.stApp {
+  background:
+    radial-gradient(circle at 14% 12%, rgba(46, 233, 211, 0.18), transparent 30%),
+    radial-gradient(circle at 82% 10%, rgba(89, 166, 255, 0.16), transparent 28%),
+    linear-gradient(135deg, #07121f 0%, #091827 48%, #101524 100%);
+  color: var(--text);
+}
+
+[data-testid="stSidebar"] {
+  background: rgba(4, 15, 28, 0.86);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+[data-testid="stSidebar"] * {
+  color: var(--text);
+}
+
+.block-container {
+  padding-top: 1.2rem;
+  padding-bottom: 2rem;
+  max-width: 1280px;
+}
+
+h1, h2, h3 {
+  letter-spacing: 0;
+}
+
+.hero {
+  min-height: 330px;
+  padding: 34px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.045)),
+    linear-gradient(120deg, rgba(46,233,211,0.14), rgba(89,166,255,0.08));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(22px);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: linear-gradient(90deg, rgba(0,0,0,0.38), transparent 80%);
+  pointer-events: none;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  color: var(--cyan);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4.6rem);
+  margin: 0.25rem 0 0.7rem 0;
+  line-height: 1.02;
+  color: var(--text);
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 780px;
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.glass-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+  background: var(--panel);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(18px);
+}
+
+.metric-card {
+  min-height: 122px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.045));
+  backdrop-filter: blur(16px);
+}
+
+.metric-card .label {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.metric-card .value {
+  color: var(--text);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 8px;
+}
+
+.metric-card .hint {
+  color: var(--muted);
+  margin-top: 4px;
+  font-size: 0.88rem;
+}
+
+.chat-row {
+  display: flex;
+  margin: 8px 0;
+}
+
+.chat-user {
+  justify-content: flex-end;
+}
+
+.chat-bot {
+  justify-content: flex-start;
+}
+
+.bubble {
+  max-width: 82%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  line-height: 1.45;
+}
+
+.chat-user .bubble {
+  background: rgba(46, 233, 211, 0.16);
+}
+
+.chat-bot .bubble {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.86rem;
+}
+
+.risk-low { color: var(--green); }
+.risk-medium { color: var(--amber); }
+.risk-high { color: var(--red); }
+
+.timeline-item {
+  border-left: 2px solid rgba(46, 233, 211, 0.55);
+  padding: 2px 0 14px 16px;
+  margin-left: 8px;
+}
+
+.timeline-item strong {
+  color: var(--text);
+}
+
+.timeline-item span {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.stButton > button, .stDownloadButton > button {
+  border-radius: 8px;
+  border: 1px solid rgba(46, 233, 211, 0.35);
+  background: linear-gradient(135deg, rgba(46,233,211,0.24), rgba(89,166,255,0.20));
+  color: var(--text);
+  font-weight: 800;
+}
+
+.stTextInput input, .stNumberInput input, .stTextArea textarea, .stSelectbox div[data-baseweb="select"] {
+  border-radius: 8px;
+}
+
+[data-testid="stMetricValue"] {
+  color: var(--text);
+}
+
+.footer-note {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
